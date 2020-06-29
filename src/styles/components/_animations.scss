@@ -1,0 +1,485 @@
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+@keyframes slideUp {
+  from {
+    transform: translateY(50%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes glideUp {
+  0% {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+  40% {
+    transform: translateY(20%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes glideDown {
+  0% {
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+  40% {
+    transform: translateY(-20%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes glideUp--sm {
+  0% {
+    transform: translateY(5%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes zoom {
+  from {
+    transform: scale(0.9);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-20%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideInRight {
+  from {
+    transform: translateX(20%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.fade-out {
+  animation: fadeOut 0.35s linear forwards;
+  -webkit-animation: fadeOut 0.35s linear forwards;
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translate3d(0, -10%, 0);
+  }
+  to {
+    opacity: 0;
+    transform: translate3d(0, -30%, 0);
+  }
+}
+[js-animate-in-view] {
+  opacity: 1;
+}
+.u-animate {
+  animation-duration: 0.4s;
+  animation-fill-mode: both;
+  // }
+  &--infinite {
+    animation-iteration-count: infinite;
+  }
+  &--spin {
+    animation-name: spin;
+  }
+  &--slideUp {
+    overflow: hidden;
+  }
+  &--slideUp > * {
+    animation-duration: 0.4s;
+    animation-fill-mode: both;
+    animation-name: slideUp;
+  }
+  &--zoom > * {
+    animation-duration: 0.4s;
+    animation-fill-mode: both;
+    animation-name: zoom;
+  }
+  &--fade-in {
+    animation-name: fadeIn;
+  }
+  &--glide-up {
+    animation-name: glideUp;
+  }
+  &--glide-down {
+    animation-name: glideDown;
+  }
+  &--glide-up-sm {
+    animation-name: glideUp--sm;
+  }
+  &--slide-in-left {
+    animation-name: slideInLeft;
+  }
+  &--slide-in-right {
+    animation-name: slideInRight;
+  }
+  &__delay {
+    &--150 {
+      animation-delay: 0.15s;
+    }
+    &--200 {
+      animation-delay: 0.2s;
+    }
+    &--300 {
+      animation-delay: 0.3s;
+    }
+    &--350 {
+      animation-delay: 0.35s;
+    }
+    &--400 {
+      animation-delay: 0.4s;
+    }
+    &--450 {
+      animation-delay: 0.45s;
+    }
+    &--500 {
+      animation-delay: 0.5s;
+    }
+    &--600 {
+      animation-delay: 0.6s;
+    }
+    &--700 {
+      animation-delay: 0.7s;
+    }
+    &--800 {
+      animation-delay: 0.8s;
+    }
+    &--900 {
+      animation-delay: 0.9s;
+    }
+    &--950 {
+      animation-delay: 0.95s;
+    }
+    &--1000 {
+      animation-delay: 1s;
+    }
+    &--1100 {
+      animation-delay: 1.1s;
+    }
+    &--1200 {
+      animation-delay: 1.2s;
+    }
+  }
+  &__duration {
+    &--150 {
+      animation-duration: 0.15s;
+    }
+    &--200 {
+      animation-duration: 0.2s;
+    }
+    &--300 {
+      animation-duration: 0.3s;
+    }
+    &--500 {
+      animation-duration: 0.5s;
+    }
+    &--600 {
+      animation-duration: 0.6s;
+    }
+    &--700 {
+      animation-duration: 0.7s;
+    }
+    &--1000 {
+      animation-duration: 1s;
+    }
+    &--1200 {
+      animation-duration: 1.2s;
+    }
+    &--1500 {
+      animation-duration: 1.5s;
+    }
+  }
+  &__ease {
+    animation-timing-function: linear;
+    &--custom-1 {
+      animation-timing-function: cubic-bezier(0.5, 0, 0.1, 1);
+    }
+    &--custom-2 {
+      animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+    }
+    &--custom-3 {
+      animation-timing-function: cubic-bezier(0.25, 0.01, 0.46, 0.97);
+    }
+  }
+}
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+.c-homepage-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  &__curve {
+    position: absolute;
+    top: calc(50% - 200px);
+    left: 0;
+    width: 100%;
+    height: 400px;
+    background-size: auto 350px;
+    display: none;
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.2;
+      background-size: inherit;
+      background-image: url("/assets/img/patterns/curved-pattern.png");
+      background-repeat: repeat-x;
+    }
+  }
+  &--play &__curve {
+    -webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    animation: moveCurve 4s;
+    animation-iteration-count: 1;
+  }
+  @keyframes moveCurve {
+    0% {
+      -webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+      clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    }
+    50% {
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+    100% {
+      -webkit-clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+      clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+    }
+  }
+  &__worldmap {
+    position: absolute;
+    top: 0;
+    left: 45%;
+    height: 100%;
+    width: 55%;
+    overflow: hidden;
+    border-radius: 50%;
+    transition: 0.3s ease-in;
+    z-index: 2;
+    @include respond(tab-port) {
+      left: 0;
+      top: -50%;
+      width: 100%;
+    }
+    & svg {
+      position: absolute;
+      transition: 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+      left: -30%;
+      top: 0;
+      height: 100%;
+      @include respond(tab-port) {
+        left: -600px;
+        top: 100px;
+      }
+      & .map-pointer {
+        opacity: 0;
+        transform: scale(0.5);
+        transition: 0.2s ease-in;
+        pointer-events: none;
+        &#united-states {
+          transform-origin: 159px 212px;
+        }
+        &#united-states {
+          transform-origin: 159px 212px;
+        }
+        &#canada {
+          transform-origin: 229px 82px;
+        }
+        &#brazil {
+          transform-origin: 375px 432px;
+        }
+        &#nigeria {
+          transform-origin: 658px 334px;
+        }
+        &#egypt {
+          transform-origin: 773px 260px;
+        }
+        &#south-africa {
+          transform-origin: 744px 531px;
+        }
+        &#uk {
+          transform-origin: 674px 161px;
+        }
+        &#china {
+          transform-origin: 1084px 201px;
+        }
+        &#india {
+          transform-origin: 1014px 271px;
+        }
+        &#norway {
+          transform-origin: 754px 41px;
+        }
+      }
+    }
+  }
+  &--play &__worldmap {
+    opacity: 1;
+  }
+
+  &--americas &__worldmap svg {
+    top: 10%;
+    left: 0;
+  }
+  &--africa &__worldmap svg {
+    left: -35%;
+    top: 5%;
+  }
+  &--europe &__worldmap svg {
+    left: -50%;
+    top: 15%;
+  }
+
+  &--europe &__worldmap svg .map-pointer#norway,
+  &--europe &__worldmap svg .map-pointer#china,
+  &--europe &__worldmap svg .map-pointer#uk,
+  &--europe &__worldmap svg .map-pointer#india {
+    opacity: 1;
+    transform: scale(1);
+  }
+  &--europe &__worldmap svg .map-pointer#uk {
+    transition-delay: 0.6s;
+  }
+  &--europe &__worldmap svg .map-pointer#norway {
+    transition-delay: 1s;
+  }
+  &--europe &__worldmap svg .map-pointer#india {
+    transition-delay: 1.5s;
+  }
+  &--europe &__worldmap svg .map-pointer#china {
+    transition-delay: 2.1s;
+  }
+  &--americas &__worldmap svg .map-pointer#canada,
+  &--americas &__worldmap svg .map-pointer#united-states,
+  &--americas &__worldmap svg .map-pointer#brazil {
+    opacity: 1;
+    transform: scale(1);
+  }
+  &--americas &__worldmap svg .map-pointer#canada {
+    transition-delay: 0.6s;
+  }
+  &--americas &__worldmap svg .map-pointer#united-states {
+    transition-delay: 1s;
+  }
+  &--americas &__worldmap svg .map-pointer#brazil {
+    transition-delay: 1.5s;
+  }
+  &--africa &__worldmap svg .map-pointer {
+    cursor: e-resize;
+    pointer-events: all;
+  }
+  &--africa &__worldmap svg .map-pointer#brazil,
+  &--africa &__worldmap svg .map-pointer#nigeria,
+  &--africa &__worldmap svg .map-pointer#south-africa,
+  &--africa &__worldmap svg .map-pointer#egypt,
+  &--africa &__worldmap svg .map-pointer#norway {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+  }
+  &--africa &__worldmap svg .map-pointer#norway {
+    transition-delay: 0.6s;
+  }
+  &--africa &__worldmap svg .map-pointer#egypt {
+    transition-delay: 1s;
+  }
+  &--africa &__worldmap svg .map-pointer#south-africa {
+    transition-delay: 1.5s;
+  }
+  &--africa &__worldmap svg .map-pointer#nigeria {
+    transition-delay: 2s;
+  }
+  &--africa &__worldmap svg .map-pointer:hover {
+    transform: scale(1.1);
+  }
+  &--africa &__worldmap svg .map-pointer--left {
+    cursor: w-resize;
+  }
+  &__tooltip {
+    position: absolute;
+    z-index: 20;
+    background: #f1fdf4;
+    max-width: 180px;
+    transition: transform 0.3s, opacity 0.3s;
+    opacity: 0;
+    transform: translateY(-10px) rotate(-2deg);
+    &--on-left {
+      transform: translateY(-10px) rotate(2deg);
+      text-align: right;
+    }
+    &--is-visible {
+      opacity: 1;
+      transform: translateY(0) rotate(0);
+    }
+    & h5 {
+      font-size: 1.2rem;
+      line-height: 1;
+      margin: 0;
+      & b {
+        color: #3bb75e;
+      }
+    }
+    & p {
+      font-size: 1.2rem;
+      line-height: 1.4;
+      margin: 5px 0;
+    }
+  }
+}
