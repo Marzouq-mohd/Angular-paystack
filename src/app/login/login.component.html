@@ -1,0 +1,424 @@
+<div class="">
+  <div class="entry-page">
+    <div class="entry-page-logo">
+      <a
+        [routerLink]="['/']"
+        routerLinkActive="router-link-active"
+        title="Paystack"
+      >
+        <img
+          src="https://dashboard.paystack.com/assets/img/logo.svg"
+          alt="paystack logo"
+        />
+      </a>
+    </div>
+    <div class="">
+      <div class="entry-wrap animated fadeIn" *ngIf="login">
+        <form
+          [formGroup]="accessPaystack"
+          class="entry-box ng-pristine ng-invalid ng-invalid-required"
+          name="loginForm"
+          *ngIf="login"
+        >
+          <h1 class="entry-box-title text-center m-b-lg">Login</h1>
+          <div class="form-group">
+            <input
+              type="email"
+              formControlName="user"
+              class="form-control input-md ng-pristine ng-untouched ng-invalid ng-invalid-required"
+              placeholder="Email address"
+              required=""
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="password"
+              formControlName="password"
+              class="form-control input-md ng-pristine ng-untouched ng-invalid ng-invalid-required"
+              placeholder="Password"
+              required=""
+            />
+          </div>
+          <div class="form-group">
+            <button
+              class="btn btn-lg btn-success btn-block loading-button"
+              [disabled]="accessPaystack.invalid"
+              ng-click="login()"
+              ng-loading="loggedIn"
+              disabled="disabled"
+            >
+              <span class="default-state">Login to your account</span>
+            </button>
+          </div>
+        </form>
+        <div class="entry-base">
+          <div class="">
+            New to Paystack?
+            <a class="" (click)="signUpScreen()">Sign up</a>
+          </div>
+          <div>
+            <a
+              class=""
+              [routerLink]="['/']"
+              routerLinkActive="router-link-active"
+              >Forgot your password?</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="entry-wrap entry-wrap-lg animated fadeIn" *ngIf="!login">
+        <div class="entry-box entry-box-will-flip entry-box-front">
+          <form
+            name="signupForm"
+            [formGroup]="createPaystack"
+            class="form-validation"
+          >
+            <div class="row">
+              <div class="col-md-6">
+                <h1 class="entry-box-title text-primary m-b-md m-t-md">
+                  Create your account
+                </h1>
+                <p class="hidden-xs">
+                  Over 60,000 businesses of all sizes use Paystack to accept
+                  payments online, including some of Africa's biggest brands.
+                </p>
+                <p class="hidden-xs">
+                  Your customers will love the simple, secure payment
+                  experience, and if you need any help, our friendly Support
+                  team is only a quick phone call (or email) away.
+                </p>
+                <p class="hidden-xs">
+                  Thank you for choosing Paystack. We look forward to being a
+                  reliable growth engine and partner to you, your team, and your
+                  business.
+                </p>
+                <!-- <p class="m-t-lg hidden-xs">
+                  <img src="" alt="">
+                </p> -->
+                <!-- <p class="hidden-xs m-t-md">CEO, Paystack</p> -->
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="control-label">Legal Business name</label>
+                  <input
+                    type="text"
+                    formControlName="businessName"
+                    class="form-control input-sm"
+                    required=""
+                  />
+                </div>
+                <div class="form-group">
+                  <label class="control-label">Your work email address</label>
+                  <input
+                    type="email"
+                    formControlName="email"
+                    class="form-control input-sm"
+                    email-suggestion="emailSuggestion"
+                    required=""
+                  />
+                </div>
+                <div class="form-group">
+                  <label class="control-label">Password</label>
+                  <div class="pos-rlt">
+                    <input
+                      [type]="showPassword ? 'text' : 'password'"
+                      show-password="showPassword"
+                      formControlName="password"
+                      class="form-control input-sm"
+                      (change)="
+                        validatePassword(createPaystack.get('password'))
+                      "
+                      name="password"
+                    />
+                    <div
+                      class="pos-abt m-r-xs h-full flex flex-align--center clickable eye-icon"
+                      style="top: 0; right: 8px;"
+                      (click)="showPassword = !showPassword"
+                    >
+                      <i
+                        aria-label="show password "
+                        class="buttonicon icon-grey"
+                        icon="eye"
+                        *ngIf="showPassword"
+                      >
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                          ></path>
+                          <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                      </i>
+                      <i
+                        aria-label="hide password "
+                        class="buttonicon icon-grey"
+                        icon="eyeOff"
+                        *ngIf="!showPassword"
+                      >
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"
+                          ></path>
+                          <line x1="1" y1="1" x2="23" y2="23"></line>
+                        </svg>
+                      </i>
+                    </div>
+                  </div>
+                  <div
+                    class="m-b-sm m-t-sm"
+                    *ngIf="
+                      createPaystack.get('password').invalid &&
+                      (createPaystack.get('password').dirty ||
+                        createPaystack.get('password').touched)
+                    "
+                  >
+                    <ul
+                      class="list-unstyled padder text-xs ng-scope"
+                      ng-if="!checker.isValid"
+                    >
+                      <li class="m-b-xs">
+                        <span
+                          class="dot m-r-sm text-success"
+                          ng-class="
+                            checker.hasLowerCase ? 'text-success' : 'text-muted'
+                          "
+                        ></span>
+                        <span
+                          ng-class="{ 'text-muted': !checker.hasLowerCase }"
+                          class="ng-binding"
+                          >One lowercase letter</span
+                        >
+                      </li>
+                      <li class="m-b-xs">
+                        <span
+                          class="dot m-r-sm text-muted"
+                          ng-class="
+                            checker.hasUpperCase ? 'text-success' : 'text-muted'
+                          "
+                        ></span>
+                        <span
+                          ng-class="{ 'text-muted': !checker.hasUpperCase }"
+                          class="ng-binding text-muted"
+                          >One uppercase letter</span
+                        >
+                      </li>
+                      <li class="m-b-xs">
+                        <span
+                          class="dot m-r-sm text-muted"
+                          ng-class="
+                            checker.hasSpecialCharacter
+                              ? 'text-success'
+                              : 'text-muted'
+                          "
+                        ></span>
+                        <span
+                          ng-class="{
+                            'text-muted': !checker.hasSpecialCharacter
+                          }"
+                          class="ng-binding text-muted"
+                          >One special character</span
+                        >
+                      </li>
+                      <li class="m-b-xs">
+                        <span
+                          class="dot m-r-sm text-muted"
+                          ng-class="
+                            checker.hasNumber ? 'text-success' : 'text-muted'
+                          "
+                        ></span>
+                        <span
+                          ng-class="{ 'text-muted': !checker.hasNumber }"
+                          class="ng-binding text-muted"
+                          >One number</span
+                        >
+                      </li>
+                      <li>
+                        <span
+                          class="dot m-r-sm text-muted"
+                          ng-class="
+                            checker.hasValidLength
+                              ? 'text-success'
+                              : 'text-muted'
+                          "
+                        ></span>
+                        <span
+                          ng-class="{ 'text-muted': !checker.hasValidLength }"
+                          class="ng-binding text-muted"
+                          >8 characters minimum</span
+                        >
+                      </li>
+                      <div class="clearfix"></div>
+                    </ul>
+                  </div>
+
+                  <div
+                    class="m-b-sm m-t-sm"
+                    *ngIf="
+                      createPaystack.get('password').valid &&
+                      createPaystack.get('password').touched
+                    "
+                  >
+                    <div
+                      class="alert alert-success wrapper-sm"
+                      ng-if="checker.isValid"
+                    >
+                      <!-- <i class="fa fa-check-circle-o m-r-xs"></i> -->
+                      <span class="text-sm" style="font-size: 13px;"
+                        >Your password is secure!</span
+                      >
+                    </div>
+                  </div>
+                  <div
+                    class="form-group"
+                    *ngIf="
+                      createPaystack.get('password')?.valid &&
+                      createPaystack.get('password')?.touched
+                    "
+                  >
+                    <label class="control-label">Confirm Password</label>
+                    <div class="pos-rlt" ng-init="showConfirmPassword = true">
+                      <input
+                        [type]="showConfirmedPassword ? 'text' : 'password'"
+                        show-password="showConfirmPassword"
+                        name="confirmPassword"
+                        formControlName="confirmPassword"
+                        class="form-control input-sm ng-pristine ng-untouched ng-valid ng-valid-required"
+                        required
+                        placeholder="Confirm Password"
+                      />
+
+                      <div
+                        ng-click="showConfirmPassword = !showConfirmPassword"
+                        class="pos-abt m-r-xs h-full flex flex-align--center clickable eye-icon"
+                        style="top: 0; right: 8px;"
+                        (click)="showConfirmedPassword = !showConfirmedPassword"
+                      >
+                        <i
+                          ng:bind-html="renderedIcon"
+                          aria-label="show password "
+                          ng-show="showConfirmPassword"
+                          class="buttonicon icon-grey ng-isolate-scope"
+                          icon="eye"
+                          *ngIf="showConfirmedPassword"
+                        >
+                          <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                            ></path>
+                            <circle cx="12" cy="12" r="3"></circle>
+                          </svg>
+                        </i>
+                        <i
+                          ng:bind-html="renderedIcon"
+                          aria-label="hide password "
+                          ng-hide="showConfirmPassword"
+                          class="buttonicon icon-grey ng-isolate-scope ng-hide"
+                          icon="eyeOff"
+                          *ngIf="!showConfirmedPassword"
+                        >
+                          <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"
+                            ></path>
+                            <line x1="1" y1="1" x2="23" y2="23"></line>
+                          </svg>
+                        </i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label">Country</label>
+                  <div class="single-select select-xs">
+                    <select
+                      name="country"
+                      class="form-control input-sm ng-pristine ng-untouched ng-valid ng-valid-required"
+                      formControlName="country"
+                      ng-options="country.iso_code as country.name for country in countries"
+                      required=""
+                      ><option value="" disabled="" selected="" class=""
+                        >Select Country</option
+                      ><option value="0">Nigeria</option
+                      ><option value="1">Ghana</option></select
+                    >
+                  </div>
+                  <div class="m-t-sm m-b-md text-xs">
+                    Don’t see your country?
+                    <a
+                      [routerLink]="['/']"
+                      routerLinkActive="router-link-active"
+                      class="text-primary"
+                      target="_blank"
+                      >Let us know you’re interested</a
+                    >
+                  </div>
+                </div>
+                <div class="form-group">
+                  <button
+                    class="btn btn-lg btn-success btn-block loading-button"
+                    ng-disabled="signupForm.$invalid || credentials.password != credentials.password_confirmation"
+                    ng-click="signup()"
+                    ng-loading="accountCreated"
+                    disabled="disabled"
+                  >
+                    <span class="default-state">Create My Account</span>
+                  </button>
+                  <div class="m-t-sm text-xs">
+                    By clicking the “Create My Account” button, you agree to
+                    Paystack’s
+                    <a
+                      ng-click="showProhibitedBusinesses = true"
+                      class="text-primary"
+                      >terms of acceptable use</a
+                    >.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="entry-base entry-base-absolute">
+          <div class="">
+            Already have an account?
+            <a class="" (click)="loginScreen()">Login</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

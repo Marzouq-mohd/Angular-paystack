@@ -32,7 +32,7 @@
         </a>
         <ul class="c-nav-menu c-nav-menu--horizontal">
           <li class="c-nav-menu__item u-has-dropdown u-has-dropdown--two-sides">
-            <a href="#"
+            <a [routerLink]="['/']"
               >Why Paystack
               <span class="u-icon-arrow"></span>
             </a>
@@ -42,11 +42,11 @@
               >
                 <ul class="c-nav-menu c-nav-menu--vertical">
                   <li class="c-nav-menu__item c-nav-menu__item--has-icon">
-                    <a href="/why-choose-paystack">
+                    <a [routerLink]="['/']">
                       <div class="c-nav-menu__icon c-nav-menu__icon--md">
                         <img
                           class="u-lazyload"
-                          data-src="/assets/img/icon/navigation/why_paystack/why_choose_paystack_db.svg"
+                          src="https://paystack.com/assets/img/icon/navigation/why_paystack/why_choose_paystack_db.svg"
                           alt="Why choose paystack icon"
                         />
                       </div>
@@ -59,11 +59,11 @@
                     </a>
                   </li>
                   <li class="c-nav-menu__item c-nav-menu__item--has-icon">
-                    <a href="/success-rates">
+                    <a [routerLink]="['/']">
                       <div class="c-nav-menu__icon c-nav-menu__icon--md">
                         <img
                           class="u-lazyload"
-                          data-src="/assets/img/icon/navigation/why_paystack/success_rates_db.svg"
+                          src="https://paystack.com/assets/img/icon/navigation/why_paystack/success_rates_db.svg"
                           alt="Success rates icon"
                         />
                       </div>
@@ -76,11 +76,11 @@
                     </a>
                   </li>
                   <li class="c-nav-menu__item c-nav-menu__item--has-icon">
-                    <a href="/demo">
+                    <a [routerLink]="['/']">
                       <div class="c-nav-menu__icon c-nav-menu__icon--md">
                         <img
                           class="u-lazyload"
-                          data-src="/assets/img/icon/navigation/why_paystack/demo_db.svg"
+                          src="https://paystack.com/assets/img/icon/navigation/why_paystack/demo_db.svg"
                           alt="Demo icon"
                         />
                       </div>
@@ -98,38 +98,38 @@
                 <ul class="c-nav-menu c-nav-menu--vertical">
                   <div class="c-nav-menu__label">Your Growth Stage</div>
                   <li class="c-nav-menu__item">
-                    <a href="/entrepreneurs">For Entrepreneurs</a>
+                    <a [routerLink]="['/']">For Entrepreneurs</a>
                   </li>
                   <li class="c-nav-menu__item">
-                    <a href="/corporates">For Corporates</a>
+                    <a [routerLink]="['/']">For Corporates</a>
                   </li>
                   <li class="c-nav-menu__item">
-                    <a href="/internationals">For Global Brands</a>
+                    <a [routerLink]="['/']">For Global Brands</a>
                   </li>
                 </ul>
                 <ul class="c-nav-menu c-nav-menu--vertical">
                   <div class="c-nav-menu__label">Your Business Type</div>
                   <li class="c-nav-menu__item">
-                    <a href="/fintech">For Fintechs</a>
+                    <a [routerLink]="['/']">For Fintechs</a>
                   </li>
                   <li class="c-nav-menu__item">
-                    <a href="/schools">For Schools</a>
+                    <a [routerLink]="['/']">For Schools</a>
                   </li>
                   <li class="c-nav-menu__item">
-                    <a href="/betting">For Betting</a>
+                    <a [routerLink]="['/']">For Betting</a>
                   </li>
                 </ul>
               </div>
             </div>
           </li>
           <li class="c-nav-menu__item">
-            <a href="/wall-of-love">Customers</a>
+            <a [routerLink]="['/']">Customers</a>
           </li>
           <li class="c-nav-menu__item">
-            <a href="/pricing">Pricing</a>
+            <a [routerLink]="['/']">Pricing</a>
           </li>
           <li class="c-nav-menu__item u-has-dropdown u-has-dropdown--two-sides">
-            <a href="#"
+            <a [routerLink]="['/']"
               >Learn
               <span class="u-icon-arrow"></span>
             </a>
@@ -139,11 +139,11 @@
               >
                 <ul class="c-nav-menu">
                   <li class="c-nav-menu__item c-nav-menu__item--has-icon">
-                    <a target="_blank" rel="noopener" href="/blog">
+                    <a target="_blank" rel="noopener" [routerLink]="['/']">
                       <div class="c-nav-menu__icon c-nav-menu__icon--md">
                         <img
                           class="u-lazyload"
-                          data-src="/assets/img/icon/navigation/learn/blog_db.svg"
+                          src="https://paystack.com/assets/img/icon/navigation/learn/blog_db.svg"
                           alt="Blog icon"
                         />
                       </div>
@@ -157,11 +157,11 @@
                     </a>
                   </li>
                   <li class="c-nav-menu__item c-nav-menu__item--has-icon">
-                    <a href="/guides">
+                    <a [routerLink]="['/']">
                       <div class="c-nav-menu__icon c-nav-menu__icon--md">
                         <img
                           class="u-lazyload"
-                          data-src="/assets/img/icon/navigation/learn/guides_db.svg"
+                          src="https://paystack.com/assets/img/icon/navigation/learn/guides_db.svg"
                           alt="Guides icon"
                         />
                       </div>
@@ -174,11 +174,11 @@
                     </a>
                   </li>
                   <li class="c-nav-menu__item c-nav-menu__item--has-icon">
-                    <a target="_blank" rel="noopener" href="/tutorials">
+                    <a target="_blank" rel="noopener" [routerLink]="['/']">
                       <div class="c-nav-menu__icon c-nav-menu__icon--md">
                         <img
                           class="u-lazyload"
-                          data-src="/assets/img/icon/navigation/learn/tutorials_db.svg"
+                          src="https://paystack.com/assets/img/icon/navigation/learn/tutorials_db.svg"
                           alt="Tutorial icon"
                         />
                       </div>
@@ -189,15 +189,11 @@
                     </a>
                   </li>
                   <li class="c-nav-menu__item c-nav-menu__item--has-icon">
-                    <a
-                      target="_blank"
-                      rel="noopener"
-                      href="https://decodefintech.com"
-                    >
+                    <a target="_blank" rel="noopener" [routerLink]="['/']">
                       <div class="c-nav-menu__icon c-nav-menu__icon--md">
                         <img
                           class="u-lazyload"
-                          data-src="/assets/img/icon/navigation/learn/decode_fintech_db.svg"
+                          src="https://paystack.com/assets/img/icon/navigation/learn/decode_fintech_db.svg"
                           alt="Tutorial icon"
                         />
                       </div>
@@ -216,19 +212,19 @@
                 <ul class="c-nav-menu c-nav-menu--vertical">
                   <div class="c-nav-menu__label">Company</div>
                   <li class="c-nav-menu__item">
-                    <a href="/about">About Us</a>
+                    <a [routerLink]="['/']">About Us</a>
                   </li>
                   <li class="c-nav-menu__item">
-                    <a href="/compliance">Compliance</a>
+                    <a [routerLink]="['/']">Compliance</a>
                   </li>
                   <li class="c-nav-menu__item">
-                    <a href="/careers">Careers</a>
+                    <a [routerLink]="['/']">Careers</a>
                   </li>
                   <li class="c-nav-menu__item">
-                    <a href="/brand">Brand</a>
+                    <a [routerLink]="['/']">Brand</a>
                   </li>
                   <li class="c-nav-menu__item">
-                    <a href="/media">Media Kit</a>
+                    <a [routerLink]="['/']">Media Kit</a>
                   </li>
                 </ul>
               </div>
@@ -239,39 +235,41 @@
       <div class="c-nav--right">
         <ul class="c-nav-menu c-nav-menu--horizontal">
           <li class="c-nav-menu__item u-has-dropdown">
-            <a href="#"
+            <a [routerLink]="['/']"
               >Developers
               <span class="u-icon-arrow"></span>
             </a>
             <div class="c-dropdown c-dropdown--flip">
               <ul class="c-nav-menu c-nav-menu--vertical">
                 <li class="c-nav-menu__item">
-                  <a href="/developers">Overview</a>
+                  <a [routerLink]="['/']">Overview</a>
                 </li>
                 <li class="c-nav-menu__item">
-                  <a href="https://developers.paystack.co/">Documentation</a>
+                  <a [routerLink]="['/']">Documentation</a>
                 </li>
                 <li class="c-nav-menu__item">
-                  <a href="/status">Status Page</a>
+                  <a [routerLink]="['/']">Status Page</a>
                 </li>
               </ul>
             </div>
           </li>
           <li class="c-nav-menu__item u-has-dropdown">
-            <a href="#"
+            <a [routerLink]="['/']"
               >Support
               <span class="u-icon-arrow"></span>
             </a>
             <div class="c-dropdown c-dropdown--flip">
               <ul class="c-nav-menu c-nav-menu--vertical">
                 <li class="c-nav-menu__item">
-                  <a target="_blank" rel="noopener" href="/help">Quick Help</a>
+                  <a target="_blank" rel="noopener" [routerLink]="['/']"
+                    >Quick Help</a
+                  >
                 </li>
                 <li class="c-nav-menu__item">
-                  <a href="/contact">Contact Us</a>
+                  <a [routerLink]="['/']">Contact Us</a>
                 </li>
                 <li class="c-nav-menu__item">
-                  <a target="_blank" rel="noopener" href="/lookup"
+                  <a target="_blank" rel="noopener" [routerLink]="['/']"
                     >Why was I debited?</a
                   >
                 </li>
@@ -279,11 +277,13 @@
             </div>
           </li>
           <li class="c-nav-menu__item c-nav-menu__item--green">
-            <a href="https://dashboard.paystack.com/#/login">Login</a>
+            <a [routerLink]="['/login']" routerLinkActive="router-link-active"
+              >Login</a
+            >
           </li>
           <li class="c-nav-menu__item--cta">
             <a
-              href="https://dashboard.paystack.com/#/signup"
+              [routerLink]="['/sign-up']"
               data-track
               data-track-section="Nav"
               class="c-button c-button c-button--primary"
@@ -294,7 +294,7 @@
           <li
             class="c-nav-menu__item u-has-dropdown c-nav-menu__item--countries"
           >
-            <a href="#">
+            <a [routerLink]="['/']">
               <span class="u-flag-icon u-flag-icon--ng"></span>
             </a>
             <div
@@ -302,13 +302,13 @@
             >
               <ul class="c-nav-menu u-text--left">
                 <li class="c-nav-menu__item">
-                  <a href="/gh/?localeUpdate=true">
+                  <a [routerLink]="['/']">
                     <span class="u-flag-icon u-flag-icon--gh"></span
                     ><span>Ghana</span>
                   </a>
                 </li>
                 <li class="c-nav-menu__item">
-                  <a href="/countries">
+                  <a [routerLink]="['/']">
                     <span class="u-flag-icon u-flag-icon--paystack"></span
                     ><span>Others</span>
                   </a>
@@ -328,7 +328,7 @@
     >
       <div class="c-nav__header">
         <div class="c-nav--left">
-          <a href="https://paystack.com/" class="c-nav__logo">
+          <a [routerLink]="['/']" class="c-nav__logo">
             <svg
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -367,7 +367,11 @@
       </div>
       <div
         class="c-nav__body c-nav__body--parent u-animate u-animate--fade-in"
-        [ngClass]="status ? 'c-nav__body--is-opened' : ''"
+        [ngClass]="
+          mobileNav
+            ? 'c-nav c-nav--mobile-only c-nav--is-opened c-nav__body--parent'
+            : ''
+        "
       >
         <div class="c-nav__mask">
           <div id="js-main-nav">
@@ -377,39 +381,40 @@
                 id="why-paystack"
                 (click)="status = !status"
               >
-                <a href="#">
+                <a [routerLink]="['/']">
                   Why Paystack
                 </a>
               </li>
               <li class="c-nav-menu__item">
-                <a href="/wall-of-love">
+                <a [routerLink]="['/']">
                   Customers
                 </a>
               </li>
               <li class="c-nav-menu__item">
-                <a href="/pricing">
+                <a [routerLink]="['/']">
                   Pricing
                 </a>
               </li>
               <li class="c-nav-menu__item js-nav-has-children" id="learn">
-                <a href="#">
+                <a [routerLink]="['/']">
                   Learn
                 </a>
               </li>
               <li class="c-nav-menu__item js-nav-has-children" id="developers">
-                <a href="#">
+                <a [routerLink]="['/']">
                   Developers
                 </a>
               </li>
               <li class="c-nav-menu__item js-nav-has-children" id="support">
-                <a href="#">
+                <a [routerLink]="['/']">
                   Support
                 </a>
               </li>
               <li class="c-nav-menu__item c-nav-menu__item--cta">
                 <a
                   class="u-text--secondary"
-                  href="https://dashboard.paystack.com/#/login"
+                  [routerLink]="['/login']"
+                  routerLinkActive="router-link-active"
                 >
                   Login
                 </a>
@@ -417,7 +422,7 @@
               <li class="c-nav-menu__item c-nav-menu__item--cta">
                 <a
                   class="c-button c-button--primary u-text-center c-button--full-width c-button--lg"
-                  href="https://dashboard.paystack.com/#/signup"
+                  [routerLink]="['/sign-up']"
                   data-track
                   data-track-section="Nav"
                 >
@@ -453,52 +458,55 @@
               <div class="c-nav-menu-links" data-menu-link-group="why-paystack">
                 <ul class="c-nav-menu__group">
                   <li class="c-nav-menu__item">
-                    <a href="/why-choose-paystack">Why Choose Paystack</a>
+                    <a [routerLink]="['/']">Why Choose Paystack</a>
                   </li>
                   <li class="c-nav-menu__item">
-                    <a href="/success-rates">Success Rates</a>
+                    <a [routerLink]="['/']">Success Rates</a>
                   </li>
-                  <li class="c-nav-menu__item"><a href="/demo">Demo</a></li>
+                  <li class="c-nav-menu__item">
+                    <a [routerLink]="['/']">Demo</a>
+                  </li>
                 </ul>
                 <ul class="c-nav-menu__group">
                   <div class="c-nav-menu__label">Your Growth Stage</div>
                   <li class="c-nav-menu__item">
-                    <a href="/entrepreneurs">For Entrepreneurs</a>
+                    <a [routerLink]="['/']">For Entrepreneurs</a>
                   </li>
                   <li class="c-nav-menu__item">
-                    <a href="/corporates">For Corporates</a>
+                    <a [routerLink]="['/']">For Corporates</a>
                   </li>
                   <li class="c-nav-menu__item">
-                    <a href="/internationals">For Global Brands</a>
+                    <a [routerLink]="['/']">For Global Brands</a>
                   </li>
                 </ul>
                 <ul class="c-nav-menu__group">
                   <div class="c-nav-menu__label">Your Business Type</div>
                   <li class="c-nav-menu__item">
-                    <a href="/fintech">For Fintechs</a>
+                    <a [routerLink]="['/']">For Fintechs</a>
                   </li>
                   <li class="c-nav-menu__item">
-                    <a href="/schools">For Schools</a>
+                    <a [routerLink]="['/']">For Schools</a>
                   </li>
                   <li class="c-nav-menu__item">
-                    <a href="/betting">For Betting</a>
+                    <a [routerLink]="['/']">For Betting</a>
                   </li>
                 </ul>
               </div>
               <div class="c-nav-menu-links" data-menu-link-group="learn">
                 <ul class="c-nav-menu__group">
-                  <li class="c-nav-menu__item"><a href="/blog">Blog</a></li>
-                  <li class="c-nav-menu__item"><a href="/guides">Guides</a></li>
                   <li class="c-nav-menu__item">
-                    <a target="_blank" rel="noopener" href="/tutorials"
+                    <a [routerLink]="['/']">Blog</a>
+                  </li>
+                  <li class="c-nav-menu__item">
+                    <a [routerLink]="['/']">Guides</a>
+                  </li>
+                  <li class="c-nav-menu__item">
+                    <a target="_blank" rel="noopener" [routerLink]="['/']"
                       >Video Tutorials</a
                     >
                   </li>
                   <li class="c-nav-menu__item">
-                    <a
-                      target="_blank"
-                      rel="noopener"
-                      href="https://decodefintech.com"
+                    <a target="_blank" rel="noopener" [routerLink]="['/']"
                       >Decode Fintech</a
                     >
                   </li>
@@ -506,46 +514,50 @@
                 <ul class="c-nav-menu__group">
                   <div class="c-nav-menu__label">Company</div>
                   <li class="c-nav-menu__item">
-                    <a href="/about">About Us</a>
+                    <a [routerLink]="['/']">About Us</a>
                   </li>
                   <li class="c-nav-menu__item">
-                    <a href="/compliance">Compliance</a>
+                    <a [routerLink]="['/']">Compliance</a>
                   </li>
                   <li class="c-nav-menu__item">
-                    <a href="/careers">Careers</a>
-                  </li>
-                  <li class="c-nav-menu__item"><a href="/brand">Brand</a></li>
-                  <li class="c-nav-menu__item">
-                    <a href="/media">Media Kit</a>
+                    <a [routerLink]="['/']">Careers</a>
                   </li>
                   <li class="c-nav-menu__item">
-                    <a href="/terms">Privacy & Terms</a>
+                    <a [routerLink]="['/']">Brand</a>
+                  </li>
+                  <li class="c-nav-menu__item">
+                    <a [routerLink]="['/']">Media Kit</a>
+                  </li>
+                  <li class="c-nav-menu__item">
+                    <a [routerLink]="['/']">Privacy & Terms</a>
                   </li>
                 </ul>
               </div>
               <div class="c-nav-menu-links" data-menu-link-group="developers">
                 <ul class="c-nav-menu__group">
                   <li class="c-nav-menu__item">
-                    <a href="/developers">Overview</a>
+                    <a [routerLink]="['/']">Overview</a>
                   </li>
                   <li class="c-nav-menu__item">
-                    <a href="https://developers.paystack.co/">Documentation</a>
+                    <a [routerLink]="['/']">Documentation</a>
                   </li>
-                  <li class="c-nav-menu__item"><a href="/status">Status</a></li>
+                  <li class="c-nav-menu__item">
+                    <a [routerLink]="['/']">Status</a>
+                  </li>
                 </ul>
               </div>
               <div class="c-nav-menu-links" data-menu-link-group="support">
                 <ul class="c-nav-menu__group">
                   <li class="c-nav-menu__item">
-                    <a target="_blank" rel="noopener" href="/help"
+                    <a target="_blank" rel="noopener" [routerLink]="['/']"
                       >Quick Help</a
                     >
                   </li>
                   <li class="c-nav-menu__item">
-                    <a href="/contact">Contact Us</a>
+                    <a [routerLink]="['/']">Contact Us</a>
                   </li>
                   <li class="c-nav-menu__item">
-                    <a href="/lookup">Why was I debited?</a>
+                    <a [routerLink]="['/']">Why was I debited?</a>
                   </li>
                 </ul>
               </div>

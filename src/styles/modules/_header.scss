@@ -285,7 +285,7 @@ header {
     -ms-flex-pack: center;
     justify-content: center;
   }
-  &--mobile-only &--is-opened &__body--parent {
+  &--mobile-only.c-nav--is-opened.c-nav__body--parent {
     display: block;
   }
   &--mobile-only &__mask {
