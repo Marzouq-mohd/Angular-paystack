@@ -41,10 +41,8 @@
           </div>
           <div class="form-group">
             <button
-              class="btn btn-lg btn-success btn-block loading-button"
+              class="btn btn-lg btn-success btn-block loading-button c-button c-button--primary u-text-center c-button--full-width c-button--lg"
               [disabled]="accessPaystack.invalid"
-              ng-click="login()"
-              ng-loading="loggedIn"
               disabled="disabled"
             >
               <span class="default-state">Login to your account</span>
@@ -122,12 +120,8 @@
                   <div class="pos-rlt">
                     <input
                       [type]="showPassword ? 'text' : 'password'"
-                      show-password="showPassword"
                       formControlName="password"
                       class="form-control input-sm"
-                      (change)="
-                        validatePassword(createPaystack.get('password'))
-                      "
                       name="password"
                     />
                     <div
@@ -190,31 +184,40 @@
                     "
                   >
                     <ul
-                      class="list-unstyled padder text-xs ng-scope"
-                      ng-if="!checker.isValid"
+                      class="list-unstyled padder text-xs"
+                      *ngIf="!createPaystack.get('password').value.isValid"
                     >
                       <li class="m-b-xs">
                         <span
                           class="dot m-r-sm text-success"
-                          ng-class="
-                            checker.hasLowerCase ? 'text-success' : 'text-muted'
+                          [ngClass]="
+                            createPaystack.get('password').value.hasLowerCase
+                              ? 'text-success'
+                              : 'text-muted'
                           "
                         ></span>
                         <span
-                          ng-class="{ 'text-muted': !checker.hasLowerCase }"
-                          class="ng-binding"
+                          [ngClass]="{
+                            'text-muted': !createPaystack.get('password').value
+                              .hasLowerCase
+                          }"
                           >One lowercase letter</span
                         >
                       </li>
                       <li class="m-b-xs">
                         <span
-                          class="dot m-r-sm text-muted"
-                          ng-class="
-                            checker.hasUpperCase ? 'text-success' : 'text-muted'
+                          class="dot m-r-sm"
+                          [ngClass]="
+                            createPaystack.get('password').value.hasUpperCase
+                              ? 'text-success'
+                              : 'text-muted'
                           "
                         ></span>
                         <span
-                          ng-class="{ 'text-muted': !checker.hasUpperCase }"
+                          [ngClass]="{
+                            'text-muted': !createPaystack.get('password').value
+                              .hasUpperCase
+                          }"
                           class="ng-binding text-muted"
                           >One uppercase letter</span
                         >
@@ -222,15 +225,17 @@
                       <li class="m-b-xs">
                         <span
                           class="dot m-r-sm text-muted"
-                          ng-class="
-                            checker.hasSpecialCharacter
+                          [ngClass]="
+                            createPaystack.get('password').value
+                              .hasSpecialCharacter
                               ? 'text-success'
                               : 'text-muted'
                           "
                         ></span>
                         <span
-                          ng-class="{
-                            'text-muted': !checker.hasSpecialCharacter
+                          [ngClass]="{
+                            'text-muted': !createPaystack.get('password').value
+                              .hasSpecialCharacter
                           }"
                           class="ng-binding text-muted"
                           >One special character</span
@@ -239,12 +244,17 @@
                       <li class="m-b-xs">
                         <span
                           class="dot m-r-sm text-muted"
-                          ng-class="
-                            checker.hasNumber ? 'text-success' : 'text-muted'
+                          [ngClass]="
+                            createPaystack.get('password').value.hasNumber
+                              ? 'text-success'
+                              : 'text-muted'
                           "
                         ></span>
                         <span
-                          ng-class="{ 'text-muted': !checker.hasNumber }"
+                          [ngClass]="{
+                            'text-muted': !createPaystack.get('password').value
+                              .hasNumber
+                          }"
                           class="ng-binding text-muted"
                           >One number</span
                         >
@@ -252,15 +262,18 @@
                       <li>
                         <span
                           class="dot m-r-sm text-muted"
-                          ng-class="
-                            checker.hasValidLength
+                          [ngClass]="
+                            createPaystack.get('password').value.hasValidLength
                               ? 'text-success'
                               : 'text-muted'
                           "
                         ></span>
                         <span
-                          ng-class="{ 'text-muted': !checker.hasValidLength }"
-                          class="ng-binding text-muted"
+                          [ngClass]="{
+                            'text-muted': !createPaystack.get('password').value
+                              .hasValidLength
+                          }"
+                          class="text-muted"
                           >8 characters minimum</span
                         >
                       </li>
@@ -275,10 +288,7 @@
                       createPaystack.get('password').touched
                     "
                   >
-                    <div
-                      class="alert alert-success wrapper-sm"
-                      ng-if="checker.isValid"
-                    >
+                    <div class="alert alert-success wrapper-sm">
                       <!-- <i class="fa fa-check-circle-o m-r-xs"></i> -->
                       <span class="text-sm" style="font-size: 13px;"
                         >Your password is secure!</span
@@ -293,10 +303,9 @@
                     "
                   >
                     <label class="control-label">Confirm Password</label>
-                    <div class="pos-rlt" ng-init="showConfirmPassword = true">
+                    <div class="pos-rlt">
                       <input
                         [type]="showConfirmedPassword ? 'text' : 'password'"
-                        show-password="showConfirmPassword"
                         name="confirmPassword"
                         formControlName="confirmPassword"
                         class="form-control input-sm ng-pristine ng-untouched ng-valid ng-valid-required"
@@ -305,16 +314,13 @@
                       />
 
                       <div
-                        ng-click="showConfirmPassword = !showConfirmPassword"
                         class="pos-abt m-r-xs h-full flex flex-align--center clickable eye-icon"
                         style="top: 0; right: 8px;"
                         (click)="showConfirmedPassword = !showConfirmedPassword"
                       >
                         <i
-                          ng:bind-html="renderedIcon"
                           aria-label="show password "
-                          ng-show="showConfirmPassword"
-                          class="buttonicon icon-grey ng-isolate-scope"
+                          class="buttonicon icon-grey"
                           icon="eye"
                           *ngIf="showConfirmedPassword"
                         >
@@ -335,10 +341,8 @@
                           </svg>
                         </i>
                         <i
-                          ng:bind-html="renderedIcon"
                           aria-label="hide password "
-                          ng-hide="showConfirmPassword"
-                          class="buttonicon icon-grey ng-isolate-scope ng-hide"
+                          class="buttonicon icon-grey"
                           icon="eyeOff"
                           *ngIf="!showConfirmedPassword"
                         >
@@ -361,6 +365,22 @@
                       </div>
                     </div>
                   </div>
+
+                  <div
+                    class="m-b-sm m-t-sm"
+                    *ngIf="
+                      createPaystack.get('confirmPassword')?.touched &&
+                      createPaystack.get('password').value !=
+                        createPaystack.get('confirmPassword').value
+                    "
+                  >
+                    <div class="alert alert-danger wrapper-sm">
+                      <!-- <i class="fa fa-check-circle-o m-r-xs"></i> -->
+                      <span class="text-sm" style="font-size: 13px;"
+                        >Password does not Match</span
+                      >
+                    </div>
+                  </div>
                 </div>
                 <div class="form-group">
                   <label class="control-label">Country</label>
@@ -369,7 +389,6 @@
                       name="country"
                       class="form-control input-sm ng-pristine ng-untouched ng-valid ng-valid-required"
                       formControlName="country"
-                      ng-options="country.iso_code as country.name for country in countries"
                       required=""
                       ><option value="" disabled="" selected="" class=""
                         >Select Country</option
@@ -390,10 +409,12 @@
                 </div>
                 <div class="form-group">
                   <button
-                    class="btn btn-lg btn-success btn-block loading-button"
-                    ng-disabled="signupForm.$invalid || credentials.password != credentials.password_confirmation"
-                    ng-click="signup()"
-                    ng-loading="accountCreated"
+                    class="btn btn-lg btn-success btn-block loading-button c-button c-button--primary u-text-center c-button--full-width c-button--lg"
+                    [disabled]="
+                      createPaystack.invalid ||
+                      createPaystack.get('password').value !=
+                        createPaystack.get('confirmPassword').value
+                    "
                     disabled="disabled"
                   >
                     <span class="default-state">Create My Account</span>
@@ -401,11 +422,7 @@
                   <div class="m-t-sm text-xs">
                     By clicking the “Create My Account” button, you agree to
                     Paystack’s
-                    <a
-                      ng-click="showProhibitedBusinesses = true"
-                      class="text-primary"
-                      >terms of acceptable use</a
-                    >.
+                    <a class="text-primary">terms of acceptable use</a>.
                   </div>
                 </div>
               </div>

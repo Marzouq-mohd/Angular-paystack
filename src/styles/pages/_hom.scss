@@ -331,6 +331,7 @@
   }
   &--has-video + .u-overlay {
     background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.75);
   }
   &--pricing {
     display: block;
@@ -541,7 +542,9 @@
     position: relative;
   }
   & .l-container {
-    display: block;
+    @include respond(phone) {
+      display: block;
+    }
   }
 }
 .c-hero__video-summary {

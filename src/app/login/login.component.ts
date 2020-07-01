@@ -1,13 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import {
-  FormControl,
-  FormGroup,
-  FormBuilder,
-  Validators,
-} from "@angular/forms";
-import { ActivatedRoute, Router } from "@angular/router";
-
-// import { ConfirmedValidator } from "./confirmed.validator";
+import { FormGroup, FormBuilder, Validators } from "@angular/forms";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-login",
@@ -41,17 +34,6 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  // checkPasswords(group: FormGroup) {
-  //   // here we have the 'passwords' group
-  //   let pass = group.get("password").value;
-  //   let confirmPass = group.get("confirmPass").value;
-  //   // return pass === confirmPass ? null : { notSame: true };
-  // }
-  validatePassword(password) {
-    // console.log(password.value);
-    // let confirmPass = this.createPaystack?.get("confirmPass")?.value;
-    // return password === confirmPass ? null : { notSame: true };
-  }
   loginScreen() {
     this.login = true;
     this.route.navigateByUrl("/login");
@@ -66,5 +48,6 @@ export class LoginComponent implements OnInit {
     } else if (this.route.url.includes("sign-up")) {
       this.login = false;
     }
+    console.log(this.createPaystack.get("password"));
   }
 }

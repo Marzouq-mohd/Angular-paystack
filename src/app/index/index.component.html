@@ -709,7 +709,10 @@
               working with Paystack
             </p>
           </div>
-          <div class="c-hero__button u-hidden--mobile">
+          <div
+            class="c-hero__button u-hidden--mobile"
+            (click)="openHeroVideo = !openHeroVideo"
+          >
             <button class="c-button">
               <svg width="10" height="13" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -720,7 +723,10 @@
               </svg>
             </button>
           </div>
-          <div class="c-hero__button u-mobile-only">
+          <div
+            class="c-hero__button u-mobile-only"
+            (click)="openHeroVideo = !openHeroVideo"
+          >
             <button type="button" class="c-button--play c-button--reset">
               <svg width="10" height="13" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -736,22 +742,45 @@
       </div>
     </div>
   </div>
-  <div class="u-overlay" id="hero-video">
+  <div
+    class="u-overlay"
+    id="hero-video"
+    [ngClass]="[
+      openHeroVideo
+        ? 'u-overlay--is-visible c-hero--has-video u-overlay--is-entering'
+        : ''
+    ]"
+    heroVideo
+  >
     <div class="c-hero-video">
       <button
         class="c-button c-button--close"
         js-hide-overlay
         data-overlay="hero-video"
+        (click)="openHeroVideo = false"
       >
-        <span class="u-mobile-only">Close</span>
+        <span class="u-mobile-only" (click)="openHeroVideo = false">Close</span>
       </button>
       <div class="c-hero-video__iframe">
-        <iframe
+        <!-- <iframe
           id="js-hero-iframe"
-          src=""
+          src="//www.youtube.com/embed/aQ06f8vARhw&amp;amp;controls=0&amp;enablejsapi=1&amp;html5=1"
           frameborder="0"
           allow="autoplay; encrypted-media"
-          allowfullscreen
+          allowfullscreen=""
+        ></iframe> -->
+        <iframe
+          id="js-hero-iframe"
+          [src]="
+            openHeroVideo
+              ? cleanURL(
+                  'https://www.youtube.com/embed/aQ06f8vARhw?wmode=transparent&amp;rel=0&autoplay=1&amp;amp;controls=0&amp;enablejsapi=1&amp;html5=1'
+                )
+              : cleanURL('https://www.youtube.com/embed/aQ06f8vARhw')
+          "
+          frameborder="0"
+          allow="autoplay; encrypted-media;"
+          allowfullscreen=""
         ></iframe>
       </div>
     </div>
